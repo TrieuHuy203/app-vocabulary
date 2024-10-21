@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 import random
 
-# Danh sách từ vựng (từ - nghĩa)
+# danh sách từ vựng  
 vocabulary = {
     "Hello": "Xin chào",
     "Goodbye": "Tạm biệt",
@@ -30,17 +30,18 @@ class VocabularyApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Ứng Dụng Học Từ Vựng")
-        self.root.geometry("450x600")
-        self.root.configure(bg="#f0f0f0")
+        self.root.geometry("450x600") # kích thước cửa sổ ứng dụng
+        self.root.configure(bg="#f0f0f0") # màu nền của background
 
-        # Khung tiêu đề
+        # khung tiêu đề
+        # xây dựng giao diện người dùng bằng Tkinter
         self.title_frame = tk.Frame(root, bg="#2196F3")
         self.title_frame.pack(fill=tk.X)
 
         self.title_label = tk.Label(self.title_frame, text="Học Từ Vựng", font=("Arial", 24), bg="#2196F3", fg="white")
         self.title_label.pack(pady=20)
 
-        # Khung nội dung
+        # khung nội dung
         self.content_frame = tk.Frame(root, bg="#f0f0f0")
         self.content_frame.pack(pady=20)
 
@@ -50,19 +51,19 @@ class VocabularyApp:
         self.meaning_entry = tk.Entry(self.content_frame, font=("Arial", 14), width=20)
         self.meaning_entry.pack(pady=10)
 
-        # Nút kiểm tra
+        # nút kiểm tra
         self.check_button = tk.Button(self.content_frame, text="Kiểm Tra", command=self.check_meaning, bg="#4CAF50", fg="white", font=("Arial", 12), width=15)
         self.check_button.pack(pady=10)
 
-        # Nút tiếp theo
+        # nút tiếp theo
         self.next_button = tk.Button(self.content_frame, text="Từ Tiếp Theo", command=self.next_word, bg="#2196F3", fg="white", font=("Arial", 12), width=15)
         self.next_button.pack(pady=10)
 
-        # Nhãn điểm
+        #  điểm
         self.score_label = tk.Label(self.content_frame, text="Điểm: 0", font=("Arial", 16), bg="#f0f0f0")
         self.score_label.pack(pady=10)
 
-        # Khung thêm từ vựng
+        # thêm từ vựng
         self.add_frame = tk.Frame(root, bg="#f0f0f0")
         self.add_frame.pack(pady=20)
 
@@ -75,15 +76,15 @@ class VocabularyApp:
         self.add_button = tk.Button(self.add_frame, text="Thêm Từ Vựng", command=self.add_vocabulary, bg="#FF9800", fg="white", font=("Arial", 12))
         self.add_button.pack(side=tk.LEFT, padx=5)
 
-        # Nút sửa từ vựng
+        # nút sửa từ vựng
         self.edit_button = tk.Button(self.add_frame, text="Sửa Từ Vựng", command=self.edit_vocabulary, bg="#2196F3", fg="white", font=("Arial", 12))
         self.edit_button.pack(side=tk.LEFT, padx=5)
 
-        # Nút xóa từ vựng
+        # nút xóa từ vựng
         self.delete_button = tk.Button(self.add_frame, text="Xóa Từ Vựng", command=self.delete_vocabulary, bg="#F44336", fg="white", font=("Arial", 12))
         self.delete_button.pack(side=tk.LEFT, padx=5)
 
-        # Khung tra cứu từ vựng
+        # khung tra cứu từ vựng
         self.lookup_frame = tk.Frame(root, bg="#f0f0f0")
         self.lookup_frame.pack(pady=20)
 
